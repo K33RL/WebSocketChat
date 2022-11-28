@@ -8,11 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
-
+public class UserServiceImpl {
     private final UserRepository userRepository;
 
-    @Override
     public User findUser(Long id) {
         return userRepository.findById(id).
             orElseThrow(() -> new UserNotFoundException(String.format("User with id: %s not found", id)));
