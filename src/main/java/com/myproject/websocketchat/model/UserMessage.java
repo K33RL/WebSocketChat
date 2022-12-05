@@ -1,4 +1,4 @@
-package com.myproject.websocketchat.repository;
+package com.myproject.websocketchat.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,5 +16,8 @@ public class UserMessage {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String text;
+
+    private String message;
+    private String author;
+    private Long userId;
 }
