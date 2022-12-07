@@ -31,7 +31,7 @@ public class MessageController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/messages/{id}")
     public ResponseEntity<List<UserMessage>> getAllUserMessages(@PathVariable Long id) {
         List<UserMessage> allFromUser = messageService.getAllFromUser(id);
         return new ResponseEntity<>(allFromUser, HttpStatus.OK);
